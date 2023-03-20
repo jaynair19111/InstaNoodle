@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add Noodle</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+      
+      input, select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+      
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      
+      button:hover {
+        background-color: #3e8e41;
+      }
+      
+      button:active {
+        background-color: #3e8e41;
+        transform: translateY(2px);
+      }
+
+      h1 {text-align: center;}
+    </style>
+  </head>
+  <body>
+    <h1>Add Noodle</h1>
+    <form method="POST" action="{{ url_for('add_noodle') }}">
+      <label for="image">Image URL:</label>
+      <input type="text" id="image" name="image" required>
+      
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" required>
+      
+      <label for="spice">Spice Level:</label>
+      <select id="spice" name="spice" required>
+        <option value="0">Mild</option>
+        <option value="1">Medium</option>
+        <option value="2">Spicy</option>
+      </select>
+      
+      <label for="sodium">Sodium Content:</label>
+      <input type="number" id="sodium" name="sodium" required>
+      
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" required>
+      
+      <button type="submit">Add Noodle</button>
+    </form>
+  </body>
+</html>
